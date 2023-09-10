@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Juridico.Nucleo.Subsidios.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

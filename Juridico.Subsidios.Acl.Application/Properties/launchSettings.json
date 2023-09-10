@@ -1,0 +1,39 @@
+{
+  "profiles": {
+    "Juridico.Subsidios.Acl": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CHAVE_CONFIGCAT": "SrLbCIovz0WBRTdD1B3V4A/RN_0FE6LA0aL4h-cTv3txg"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7220;http://localhost:5016"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "publishAllPorts": true,
+      "useSSL": true
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:22103",
+      "sslPort": 44315
+    }
+  }
+}
