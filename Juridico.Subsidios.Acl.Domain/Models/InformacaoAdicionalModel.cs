@@ -11,18 +11,18 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         /// <summary>
         /// Código da informação adicional cadastrada no fornecedor
         /// </summary>
-        [SwaggerSchema(Description = "Código da informação adicional cadastrada no fornecedor")]
-        public string Código { get; set; }
+        [SwaggerSchema(Description = "Código da informação adicional cadastrada no fornecedor.")]
+        public int Codigo { get; set; }
         /// <summary>
-        /// Tipo da informação adicional
+        /// Valor da informação adicional
         /// </summary>
-        [SwaggerSchema(Description = "Tipo da informação adicional")]
-        public string Tipo { get; set; }
+        [SwaggerSchema(Description = "Valor da informação adicional.")]
+        public string Valor { get; set; }
         /// <summary>
         /// Identificação do veículo
         /// </summary>
-        [SwaggerSchema(Description = "Identificação do veículo")]
-        public string Descrição { get; set; }
+        [SwaggerSchema(Description = "Identificação do veículo.")]
+        public string Descricao { get; set; }
 
     }
 }
