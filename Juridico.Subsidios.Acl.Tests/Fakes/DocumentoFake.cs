@@ -12,7 +12,8 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 DataInclusao = DateTime.Now,
                 Descricao = "CRLV",
                 Nome = "CRLV.pdf",
-                Usuario = "123456"
+                Usuario = "123456",
+                CodigoProcesso = "16099"
             };
         }
         public static DocumentoModel ObterDocumentoBoDefault()
@@ -23,7 +24,8 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 DataInclusao = DateTime.Now,
                 Descricao = "BO",
                 Nome = "BO.pdf",
-                Usuario = "123456"
+                Usuario = "123456",
+                CodigoProcesso = "16099"
             };
         }
 
@@ -35,7 +37,8 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 DataInclusao = DateTime.Now,
                 Descricao = "CNH",
                 Nome = "CNH.pdf",
-                Usuario = "123456"
+                Usuario = "123456",
+                CodigoProcesso = "16099"
             };
         }
 
@@ -47,7 +50,8 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 DataInclusao = DateTime.Now,
                 Descricao = "CONTRATO",
                 Nome = "CONTRATO.pdf",
-                Usuario = "123456"
+                Usuario = "123456",
+                CodigoProcesso = "16099"
             };
         }
     }

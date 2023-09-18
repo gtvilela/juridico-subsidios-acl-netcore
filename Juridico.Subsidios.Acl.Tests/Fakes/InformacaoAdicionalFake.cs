@@ -9,8 +9,10 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
             return new InformacaoAdicionalModel()
             {
                 Codigo = 1,
-                Valor = "Contrato",
-                Descricao = "Código do contrato com o cliente"
+                Nome = "Contrato",
+                Valor = "XXX123456",
+                Descricao = "Código do contrato com o cliente",
+                Usuario = "123456"
             };
         }
 
@@ -19,8 +21,10 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
             return new InformacaoAdicionalModel()
             {
                 Codigo = 2,
-                Valor = "Placa",
-                Descricao = "Código da placa do veículo alugado pelo cliente"
+                Nome =  "Placa",
+                Valor = "RI02A18",
+                Descricao = "Código da placa do veículo alugado pelo cliente",
+                Usuario = "123456"
             };
         }
 
@@ -29,8 +33,10 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
             return new InformacaoAdicionalModel()
             {
                 Codigo = 3,
+                Nome = "Condutor Adicional",
                 Valor = "Sim",
-                Descricao = "Se há um condutor adicional cadastrado no contrato com o cliente."
+                Descricao = "Se há um condutor adicional cadastrado no contrato com o cliente.",
+                Usuario = "123456"
             };
         }
 
@@ -39,8 +45,10 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
             return new InformacaoAdicionalModel()
             {
                 Codigo = 4,
+                Nome = "Código do cliente",
                 Valor = "987654",
-                Descricao = "Código do cliente"
+                Descricao = "Código do cliente",
+                Usuario = "123456"
             };
         }
     }

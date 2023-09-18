@@ -14,6 +14,13 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         [SwaggerSchema(Description = "Nome do documento com extensão")]
         public string Nome { get; set; }
         /// <summary>
+        /// Código do processo que deve ser inserido o documento no fornecedor.
+        /// Para inserir ou atualizar um processo, essa informação não é obrigatória.
+        /// Mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.
+        /// </summary>
+        [SwaggerSchema(Description = "Código do processo que deve ser inserido o documento no fornecedor. Para inserir ou atualizar um processo, essa informação não é obrigatória, mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.")]
+        public string CodigoProcesso { get; set; }
+        /// <summary>
         /// Base64 referente ao documento
         /// </summary>
         [SwaggerSchema(Description = "Base64 referente ao documento")]

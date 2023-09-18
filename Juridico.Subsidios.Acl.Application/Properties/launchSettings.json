@@ -6,7 +6,10 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "CHAVE_CONFIGCAT": "SrLbCIovz0WBRTdD1B3V4A/RN_0FE6LA0aL4h-cTv3txg"
+        "CHAVE_CONFIGCAT": "SrLbCIovz0WBRTdD1B3V4A/RN_0FE6LA0aL4h-cTv3txg",
+        "FORNECEDOR_URL": "https://srv.fornecedor.com.br/ws/ws_fornecedor.dll/soap/IWS_CLIENT",
+        "FORNECEDOR_SOAP_PWD": "senhaintegracao123",
+        "FORNECEDOR_SOAP_USER": "userintegracao123"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7220;http://localhost:5016"

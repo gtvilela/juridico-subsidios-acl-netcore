@@ -26,7 +26,7 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                Usuario = "123456",
                Codigo = "16099",
                Estado = "MG",
-               MateriaLegal = "Cívil",
+               MateriaLegal = "Cível",
                NumeroProcesso = "00062-2003-014-04-00-3",
                ProcessoEletronico = "00062-2003-014-04-00-3",
                Vara = "2ª Vara Civel",

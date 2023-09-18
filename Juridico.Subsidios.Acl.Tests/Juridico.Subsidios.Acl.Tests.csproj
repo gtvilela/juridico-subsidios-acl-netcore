@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Juridico.Acl.Subsidios.Domain\Juridico.Subsidios.Acl.Domain.csproj" />
     <ProjectReference Include="..\Juridico.Subsidios.Acl.Domain\Juridico.Subsidios.Acl.Domain.csproj" />
   </ItemGroup>
 
