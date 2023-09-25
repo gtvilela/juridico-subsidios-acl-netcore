@@ -11,15 +11,6 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Gateways
 {
     public class FornecedorGateway : IFornecedorGateway
     {
-        public readonly IRestClient restClient;
-        public readonly IRestSerializer restSerializer;
-
-        public FornecedorGateway(IRestClient restClient, IRestSerializer restSerializer)
-        {
-            this.restClient = restClient;
-            this.restSerializer = restSerializer;
-        }
-
         public async Task<TReturn> ExecuteAsync<TFilter, TReturn>(TFilter filter, string mockRetorno)
             where TFilter : FiltrosBase
             where TReturn : Notifiable<Notification>

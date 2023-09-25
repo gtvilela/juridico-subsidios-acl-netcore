@@ -13,5 +13,9 @@ namespace Juridico.Subsidios.Acl.Domain.Models.Filtros
         {
             CodigoProcesso = processo;
         }
+
+        public InformacesAdicionaisFiltro()
+        {
+        }
     }
 }

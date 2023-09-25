@@ -1,10 +1,12 @@
 using ConfigCat.Client;
+using Juridico.Subsidios.Acl.Infrastucture;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddInfrastructure();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,6 +31,7 @@ builder.Services.AddSwaggerGen(opt =>
     opt.IncludeXmlComments(xmlPath);
 });
 
+
 var app = builder.Build();
 var client = ConfigCatClient.Get(Environment.GetEnvironmentVariable("CHAVE_CONFIGCAT")); // <-- This is the actual SDK Key for your 'Test Environment' environment
 client.LogLevel = ConfigCat.Client.LogLevel.Info;
@@ -42,6 +45,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
 
 app.MapControllers();
 
