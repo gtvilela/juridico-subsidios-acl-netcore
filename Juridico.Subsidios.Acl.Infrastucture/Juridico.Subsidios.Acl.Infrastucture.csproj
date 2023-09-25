@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Juridico.Subsidios.Acl.Domain\Juridico.Subsidios.Acl.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

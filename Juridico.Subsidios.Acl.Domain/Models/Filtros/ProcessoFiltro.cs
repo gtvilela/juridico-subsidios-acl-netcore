@@ -5,9 +5,14 @@ namespace Juridico.Subsidios.Acl.Domain.Models.Filtros
 
     [Serializable()]
     [XmlRoot("ConsultarProcesso")]
-    public class ConsultarProcessoFiltros : FiltrosBase
+    public class ProcessoFiltro : FiltrosBase
     {
-        public string sNumeroProcesso { get; set; }
-        public string sNumeroProcessoCliente { get; set; }
+        public string NumeroProcesso { get; set; }
+        public string NumeroProcessoCliente { get; set; }
+
+        public ProcessoFiltro(string processo)
+        {
+            CodigoProcesso = processo;
+        }
     }
 }

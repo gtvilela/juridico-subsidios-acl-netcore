@@ -1,18 +1,15 @@
-﻿using Juridico.Subsidios.Acl.Domain.Models.Filtros;
+﻿using Flunt.Notifications;
+using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 
-namespace Juridico.Subsidios.Acl.Infrastucture.Models
+namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
-    public class ProcessoFornecedorModel : FiltrosBase
+    public class ProcessoFornecedorModel : Notifiable<Notification>
     {
-        public ProcessoFornecedorModel() 
-        {
-            if (string.IsNullOrWhiteSpace(CodigoProcesso))
-                AddNotification(nameof(CodigoProcesso), "Código do processo não pode ser nulo");
+        /// <summary>
+        /// Código do processo
+        /// </summary>
+        public string Codigo { get; set; }
 
-            if (string.IsNullOrWhiteSpace(CodigoMaterialegal))
-                AddNotification(nameof(CodigoMaterialegal), "Codigo Materia legal não pode ser nulo");
-        }
-       
         /// <summary>
         /// Numero NSU Distribuicao para alterar como executado após inclusão
         /// </summary>

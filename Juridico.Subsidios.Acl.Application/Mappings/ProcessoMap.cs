@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Juridico.Subsidios.Acl.Domain.Models;
-using Juridico.Subsidios.Acl.Infrastucture.Models;
+using Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor;
 
 namespace Juridico.Subsidios.Acl.Domain.Mappings
 {
@@ -17,7 +17,7 @@ namespace Juridico.Subsidios.Acl.Domain.Mappings
                 .ForMember(dest => dest.Estado, m => m.MapFrom(src => src.SiglaUf))
                 .ConstructUsing(src =>
                     new ProcessoModel(
-                        src.CodigoProcesso)
+                        src.Codigo)
                     ); 
         }
     }

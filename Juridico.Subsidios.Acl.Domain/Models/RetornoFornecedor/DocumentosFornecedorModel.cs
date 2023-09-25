@@ -1,6 +1,8 @@
-﻿namespace Juridico.Subsidios.Acl.Domain.Models
+﻿using Flunt.Notifications;
+
+namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
-    public class DocumentosFornecedorModel
+    public class DocumentosFornecedorModel : Notifiable<Notification>
     {
         public List<DocumentoProcessoIntegracao> Documentos { get; set; }
 

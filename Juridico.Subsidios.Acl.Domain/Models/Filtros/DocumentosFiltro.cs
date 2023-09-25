@@ -9,5 +9,10 @@ namespace Juridico.Subsidios.Acl.Domain.Models.Filtros
     {
         public string CodigoDocumento { get; set; }
         public string NomeDocumento { get; set; }
+
+        public DocumentosFiltro(string processo)
+        {
+            CodigoProcesso = processo;
+        }
     }
 }

@@ -1,3 +1,4 @@
+using Juridico.Subsidios.Acl.Domain.Interfaces;
 using Juridico.Subsidios.Acl.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -10,8 +11,10 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
 
     public class ProcessoController : ApiBaseController<ProcessoController>
     {
-        public ProcessoController(ILogger<ProcessoController> logger) : base(logger)
+        private readonly ISubsidiosHandler subsidiosHandler;
+        public ProcessoController(ILogger<ProcessoController> logger, ISubsidiosHandler subsidiosHandler) : base(logger)
         {
+            this.subsidiosHandler = subsidiosHandler;
         }
 
         [HttpPost]
@@ -33,9 +36,9 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
         [SwaggerOperation(Summary = "Obtém as informações do processo referente.")]
         public async Task<IActionResult> Get(string processo)
         {
-            //Chamar o handler
+            var retornoProcesso = await subsidiosHandler.ObterProcesso(processo);
 
-            return Ok();
+            return Ok(retornoProcesso);
         }
 
         [HttpPatch]

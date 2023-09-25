@@ -70,6 +70,12 @@ namespace Juridico.Subsidios.Acl.Domain.Models
 
             if (string.IsNullOrWhiteSpace(codigo))
                 AddNotification(nameof(Codigo), "Código do processo não pode ser nulo");
+            Documentos = new List<DocumentoModel>();
+            InformacoesAdicionais = new List<InformacaoAdicionalModel>();
+        }
+
+        public ProcessoModel()
+        {
         }
     }
 }
