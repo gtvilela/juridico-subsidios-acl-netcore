@@ -1,6 +1,4 @@
-﻿using Juridico.Subsidios.Acl.Infrastructure.Models;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Juridico.Subsidios.Acl.Infrastucture.Extensions

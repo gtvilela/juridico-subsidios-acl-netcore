@@ -1,5 +1,4 @@
-﻿using Flunt.Notifications;
-using Juridico.Meridio.Acl.Infrastructure.FiltrosModels;
+﻿using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 
 namespace Juridico.Subsidios.Acl.Infrastucture.Models
 {
@@ -7,17 +6,8 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Models
     {
         public ProcessoFornecedorModel() 
         {
-            if (string.IsNullOrWhiteSpace(sCodigoProcesso))
-                AddNotification(nameof(sCodigoProcesso), "Código do processo não pode ser nulo");
-
-            if (string.IsNullOrWhiteSpace(NSUDistribuicao))
-                AddNotification(nameof(NSUDistribuicao), "NSUDistribuicao não pode ser nulo");
-
-            if (string.IsNullOrWhiteSpace(NumeroProcesso))
-                AddNotification(nameof(NumeroProcesso), "Numero Processo não pode ser nulo");
-
-            if (string.IsNullOrWhiteSpace(Tribunal))
-                AddNotification(nameof(Tribunal), "Tribunal não pode ser nulo");
+            if (string.IsNullOrWhiteSpace(CodigoProcesso))
+                AddNotification(nameof(CodigoProcesso), "Código do processo não pode ser nulo");
 
             if (string.IsNullOrWhiteSpace(CodigoMaterialegal))
                 AddNotification(nameof(CodigoMaterialegal), "Codigo Materia legal não pode ser nulo");
@@ -54,7 +44,7 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Models
         /// <summary>
         /// Codigo materia legal do fornecedor
         /// </summary>
-        public string CodigoMaterialegal { get; set; }
+        public string Materialegal { get; set; }
         /// <summary>
         /// Codigo profissional do processo
         /// </summary>
@@ -126,7 +116,7 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Models
         /// <summary>
         /// Sigla UF
         /// </summary>
-        public string SiglaUF { get; set; }
+        public string SiglaUf { get; set; }
         /// <summary>
         /// Codigo do Forum
         /// </summary>
@@ -140,9 +130,9 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Models
         /// </summary>
         public string CodigoVara { get; set; }
         /// <summary>
-        /// Descricao da vara
+        ///  vara associada ao processo
         /// </summary>
-        public string DescricaoVara { get; set; }
+        public string Vara { get; set; }
         /// <summary>
         /// Tribunal do processo
         /// </summary>
@@ -175,5 +165,9 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Models
         /// Juros do processo ex:9000.50 valor depois do ponto são centavos
         /// </summary>
         public string Juros { get; set; }
+        /// <summary>
+        /// Número do processo eletrônico
+        /// </summary>
+        public string ProcessoEletronico { get; set; }
     }
 }

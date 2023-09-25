@@ -1,9 +1,9 @@
-﻿using Juridico.Subsidios.Acl.Infrastructure.Models;
+﻿using Juridico.Subsidios.Acl.Domain.Models;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace Juridico.Subsidios.Acl.Domain.Mocks
+namespace Juridico.Subsidios.Acl.Domain.Extensions
 {
     public static class XmlExtensions
     {

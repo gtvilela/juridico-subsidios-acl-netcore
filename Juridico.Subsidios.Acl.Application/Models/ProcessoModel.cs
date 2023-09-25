@@ -1,4 +1,5 @@
-﻿using Swashbuckle.AspNetCore.Annotations;
+﻿using Flunt.Notifications;
+using Swashbuckle.AspNetCore.Annotations;
 using System.ComponentModel.DataAnnotations;
 
 namespace Juridico.Subsidios.Acl.Domain.Models
@@ -6,7 +7,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models
     /// <summary>
     /// Objeto recebido pela trigger do sistema terceiro
     /// </summary>
-    public class ProcessoModel
+    public class ProcessoModel : Notifiable<Notification>
     {
         /// <summary>
         /// Código do processo no sistema do fornecedor
@@ -62,5 +63,13 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         /// </summary>
         [SwaggerSchema(Description = "Lista de subsídios do tipo Documentos")]
         public List<DocumentoModel> Documentos { get; set; }
+
+        public ProcessoModel(string codigo)
+        {
+            Codigo = codigo;
+
+            if (string.IsNullOrWhiteSpace(codigo))
+                AddNotification(nameof(Codigo), "Código do processo não pode ser nulo");
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace Juridico.Subsidios.Acl.Infrastructure.Models
+namespace Juridico.Subsidios.Acl.Domain.Models
 {
     /// <summary>
     /// Classe base para serialização do xml de envio ao fornecedor.

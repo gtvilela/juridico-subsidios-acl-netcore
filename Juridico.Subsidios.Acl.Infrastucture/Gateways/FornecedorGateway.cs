@@ -1,14 +1,15 @@
 ﻿using Flunt.Notifications;
-using Juridico.Meridio.Acl.Infrastructure.FiltrosModels;
-using Juridico.Subsidios.Acl.Domain.Mocks;
-using Juridico.Subsidios.Acl.Infrastructure.Models;
+using Juridico.Subsidios.Acl.Domain.Extensions;
+using Juridico.Subsidios.Acl.Domain.Interfaces;
+using Juridico.Subsidios.Acl.Domain.Models;
+using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 using RestSharp;
 using RestSharp.Serializers;
-using static Juridico.Subsidios.Acl.Domain.Mocks.XmlExtensions;
+using static Juridico.Subsidios.Acl.Domain.Extensions.XmlExtensions;
 
 namespace Juridico.Subsidios.Acl.Infrastucture.Gateways
 {
-    public class FornecedorGateway
+    public class FornecedorGateway : IFornecedorGateway
     {
         public readonly IRestClient restClient;
         public readonly IRestSerializer restSerializer;

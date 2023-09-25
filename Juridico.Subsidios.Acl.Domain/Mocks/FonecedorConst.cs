@@ -1,4 +1,4 @@
-﻿namespace Juridico.Subsidios.Acl.Domain.Constants
+﻿namespace Juridico.Subsidios.Acl.Domain.Mocks
 {
     public static class FornecedorConst
     {
