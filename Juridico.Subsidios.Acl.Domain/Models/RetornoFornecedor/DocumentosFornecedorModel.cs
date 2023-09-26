@@ -4,6 +4,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
     public class DocumentosFornecedorModel : Notifiable<Notification>
     {
+        public string CodigoProcesso { get; set; }
         public List<DocumentoProcessoIntegracao> Documentos { get; set; }
 
     }
@@ -11,13 +12,17 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
     public class DocumentoProcessoIntegracao
     {
         /// <summary>
-        /// Código do processo no Fornecedor
-        /// </summary>
-        public string CodigoProcesso { get; set; }
-        /// <summary>
         /// Número de controle do documento no Fornecedor
         /// </summary>
         public string NumeroDocumento { get; set; }
+        /// <summary>
+        /// Nome do documento no Fornecedor
+        /// </summary>
+        public string Nome { get; set; }
+        /// <summary>
+        /// Descrição do documento no Fornecedor
+        /// </summary>
+        public string Descricao { get; set; }
         /// <summary>
         /// Arquivo no formato base64
         /// </summary>
@@ -34,10 +39,6 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
         /// Descrição do tipo de documento no Fornecedor
         /// </summary>
         public string DescricaoTipoDocumento { get; set; }
-        /// <summary>
-        /// Descrição detalhada do documento no Fornecedor
-        /// </summary>
-        public string DescricaoDetalhada { get; set; }
         /// <summary>
         /// Usuário que incluiu ou atualizou o documento
         /// </summary>

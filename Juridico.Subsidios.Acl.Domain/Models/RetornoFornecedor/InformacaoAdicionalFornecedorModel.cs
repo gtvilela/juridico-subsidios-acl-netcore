@@ -4,6 +4,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
     public class InformacaoAdicionalFornecedorModel : Notifiable<Notification>
     {
+        public string CodigoProcesso { get; set; }
         public List<InformacaoAdicionalProcessoIntegracao> InformacoesAdicionais { get; set; }
 
     }
@@ -13,19 +14,11 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
         /// <summary>
         /// Código de controle do Fornecedor para a informação adicional
         /// </summary>
-        public string CodigoInforAdicionalProcesso { get; set; }
-        /// <summary>
-        /// Código utilizado pela localiza para identificar o tipo de informação adicional no Fornecedor
-        /// </summary>
-        public string CodigoTipoInfoAddProcesso { get; set; }
+        public string Codigo { get; set; }
         /// <summary>
         /// Descrição/Nome da informação adicional no Fornecedor
         /// </summary>
-        public string DescricaoTipoInfoAddProcesso { get; set; }
-        /// <summary>
-        /// Código do processo no Fornecedor
-        /// </summary>
-        public string CodigoProcesso { get; set; }
+        public string Descricao { get; set; }
         /// <summary>
         /// Valor da informação adicional no Fornecedor
         /// </summary>
@@ -34,10 +27,6 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
         /// Observações da informação adicional
         /// </summary>
         public string Observacoes { get; set; }
-        /// <summary>
-        /// Tipo da informação. Pode ser Pública ou Confidencial.
-        /// </summary>
-        public string TipoInformacao { get; set; }
         /// <summary>
         /// Usuário cadastrado no Fornecedor que realizou a última alteração
         /// </summary>
