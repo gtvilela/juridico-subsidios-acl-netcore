@@ -11,8 +11,8 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
 
     public class ProcessoController : ApiBaseController<ProcessoController>
     {
-        private readonly ISubsidiosHandler subsidiosHandler;
-        public ProcessoController(ILogger<ProcessoController> logger, ISubsidiosHandler subsidiosHandler) : base(logger)
+        private readonly IProcessoHandler subsidiosHandler;
+        public ProcessoController(ILogger<ProcessoController> logger, IProcessoHandler subsidiosHandler) : base(logger)
         {
             this.subsidiosHandler = subsidiosHandler;
         }

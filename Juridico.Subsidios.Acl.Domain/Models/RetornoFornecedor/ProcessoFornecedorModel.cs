@@ -1,8 +1,11 @@
 ﻿using Flunt.Notifications;
 using Juridico.Subsidios.Acl.Domain.Models.Filtros;
+using System.Xml.Serialization;
 
 namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
+    [Serializable]
+    [XmlRoot(ElementName = "Root")]
     public class ProcessoFornecedorModel : Notifiable<Notification>
     {
         /// <summary>
@@ -20,7 +23,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
         /// <summary>
         /// Materia legal do fornecedor
         /// </summary>
-        public string Materialegal { get; set; }
+        public string MateriaLegal { get; set; }
         /// <summary>
         /// Codigo advogado
         /// </summary>
