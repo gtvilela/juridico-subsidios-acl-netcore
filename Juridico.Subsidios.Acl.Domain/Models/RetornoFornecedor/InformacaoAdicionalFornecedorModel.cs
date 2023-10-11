@@ -1,14 +1,20 @@
 ﻿using Flunt.Notifications;
+using System.Xml.Serialization;
 
 namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
+    [Serializable]
+    [XmlRoot(ElementName = "Root")]
     public class InformacaoAdicionalFornecedorModel : Notifiable<Notification>
     {
         public string CodigoProcesso { get; set; }
+
+        [XmlArray("InformacoesAdicionais")]
+        [XmlArrayItem("Element")]
         public List<InformacaoAdicionalProcessoIntegracao> InformacoesAdicionais { get; set; }
 
     }
-
+    [XmlType("Element")]
     public class InformacaoAdicionalProcessoIntegracao
     {
         /// <summary>

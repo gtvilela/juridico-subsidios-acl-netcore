@@ -27,7 +27,7 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Gateways
 
             var response = XmlExtensions.Get(mockRetorno);
 
-            return mockRetorno.DeserializeXml<TReturn>();
+            return response.DeserializeXml<TReturn>();
         }
     }
 }

@@ -4,6 +4,6 @@ namespace Juridico.Subsidios.Acl.Domain.Interfaces
 {
     public interface ISubsidiosHandler
     {
-        Task ProcessarSubsidios(SubsidioModel subsidio);
+        Task<SubsidioRetornoModel> ProcessarSubsidios(SubsidioModel subsidio);
     }
 }

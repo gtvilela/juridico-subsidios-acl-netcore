@@ -5,7 +5,7 @@ using Juridico.Subsidios.Acl.Domain.Models;
 using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 using Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor;
 
-namespace Juridico.Subsidios.Acl.Domain.Handlers
+namespace Juridico.Subsidios.Acl.Infrastucture.Handlers
 {
     public class ProcessoHandler : IProcessoHandler
     {
@@ -20,9 +20,10 @@ namespace Juridico.Subsidios.Acl.Domain.Handlers
 
         public async Task<ProcessoModel> ObterProcesso(string processo)
         {
+            #region Buscar dados do processo
             var processoFiltro = new ProcessoFiltro(processo);
 
-            var processoFornecedor = await fornecedorGateway.ExecuteAsync<ProcessoFiltro, ProcessoFornecedorModel>(processoFiltro, FornecedorConst.XML_RETORNO_CONSULTA_PROCESSO);
+            var processoFornecedor = await fornecedorGateway.ExecuteAsync<ProcessoFiltro, ProcessoFornecedorModel>(processoFiltro, FornecedorMock.XML_RETORNO_CONSULTA_PROCESSO);
             if (processoFornecedor is null)
             {
                 processoFornecedor = new ProcessoFornecedorModel();
@@ -30,12 +31,23 @@ namespace Juridico.Subsidios.Acl.Domain.Handlers
             }
 
             var retornoProcesso = mapper.Map<ProcessoModel>(processoFornecedor);
+            retornoProcesso.Codigo = processo;
+            retornoProcesso.NumeroProcesso = processo;
+            retornoProcesso.ProcessoEletronico = "E" + processo;
+            #endregion
+
+            #region Buscar informações adicionais
             var informacoesAdicionaisFornecedor = await ObterInformacoesAdicionais(processo);
-            var retornoInformacoesAdicionais = mapper.Map<List<InformacaoAdicionalModel>>(informacoesAdicionaisFornecedor);
+            var retornoInformacoesAdicionais = mapper.Map<ProcessoModel>(informacoesAdicionaisFornecedor);
+            retornoProcesso.InformacoesAdicionais = retornoInformacoesAdicionais.InformacoesAdicionais;
+            #endregion
+
+            #region Buscar documentos
             var documentosFornecedor = await ObterDocumentos(processo);
-            var retornoDocumentos = mapper.Map<List<DocumentoModel>>(documentosFornecedor);
-            retornoProcesso.Documentos = retornoDocumentos;
-            retornoProcesso.InformacoesAdicionais = retornoInformacoesAdicionais;
+            var retornoDocumentos = mapper.Map<ProcessoModel>(documentosFornecedor);
+            retornoProcesso.Documentos = retornoDocumentos.Documentos;
+            #endregion
+
 
             return retornoProcesso;
 
@@ -45,7 +57,7 @@ namespace Juridico.Subsidios.Acl.Domain.Handlers
         {
             var infoAddFiltro = new InformacesAdicionaisFiltro(processo);
 
-            var retornoInformacoesAdicionais = await fornecedorGateway.ExecuteAsync<InformacesAdicionaisFiltro, InformacaoAdicionalFornecedorModel>(infoAddFiltro, FornecedorConst.XML_RETORNO_CONSULTA_INFORMACAO_ADICIONAL);
+            var retornoInformacoesAdicionais = await fornecedorGateway.ExecuteAsync<InformacesAdicionaisFiltro, InformacaoAdicionalFornecedorModel>(infoAddFiltro, FornecedorMock.XML_RETORNO_CONSULTA_INFORMACAO_ADICIONAL);
             if (retornoInformacoesAdicionais is null)
             {
                 retornoInformacoesAdicionais = new InformacaoAdicionalFornecedorModel();
@@ -58,7 +70,7 @@ namespace Juridico.Subsidios.Acl.Domain.Handlers
         {
             var documentosFiltro = new DocumentosFiltro(processo);
 
-            var retornoDocumentos = await fornecedorGateway.ExecuteAsync<DocumentosFiltro, DocumentosFornecedorModel>(documentosFiltro, FornecedorConst.XML_RETORNO_CONSULTA_INFORMACAO_ADICIONAL);
+            var retornoDocumentos = await fornecedorGateway.ExecuteAsync<DocumentosFiltro, DocumentosFornecedorModel>(documentosFiltro, FornecedorMock.XML_RETORNO_CONSULTA_DOCUMENTO);
             if (retornoDocumentos is null)
             {
                 retornoDocumentos = new DocumentosFornecedorModel();

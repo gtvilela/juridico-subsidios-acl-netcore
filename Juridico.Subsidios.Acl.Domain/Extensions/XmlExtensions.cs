@@ -33,7 +33,7 @@ namespace Juridico.Subsidios.Acl.Domain.Extensions
 
         public static T DeserializeXml<T>(this string xml)
         {
-            using (TextReader reader = new StreamReader(xml))
+            using (TextReader reader = new StringReader(xml))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(T));
                 return (T)serializer.Deserialize(reader);

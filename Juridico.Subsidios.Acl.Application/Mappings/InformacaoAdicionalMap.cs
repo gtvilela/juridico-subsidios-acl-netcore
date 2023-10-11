@@ -8,6 +8,9 @@ namespace Juridico.Subsidios.Acl.Domain.Mappings
     {
         public InformacaoAdicionalMap()
         {
+            CreateMap<InformacaoAdicionalFornecedorModel, ProcessoModel>()
+                .ForMember(dest => dest.InformacoesAdicionais, m => m.MapFrom(src => src.InformacoesAdicionais));
+
             CreateMap<InformacaoAdicionalProcessoIntegracao, InformacaoAdicionalModel>()
                 .ForMember(dest => dest.Codigo, m => m.MapFrom(src => src.Codigo))
                 .ForMember(dest => dest.CodigoProcesso, m => m.Ignore())

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Juridico.Subsidios.Acl.Domain.Services
+namespace Juridico.Subsidios.Acl.Domain.Constants
 {
-    public class RabbitMqService
+    internal class InformacoesAdicionaisConst
     {
     }
 }

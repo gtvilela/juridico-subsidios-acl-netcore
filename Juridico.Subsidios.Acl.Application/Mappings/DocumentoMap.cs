@@ -9,6 +9,9 @@ namespace Juridico.Subsidios.Acl.Domain.Mappings
     {
         public DocumentoMap()
         {
+            CreateMap<DocumentosFornecedorModel, ProcessoModel>()
+                .ForMember(dest => dest.Documentos, m => m.MapFrom(src => src.Documentos));
+
             CreateMap<DocumentoProcessoIntegracao, DocumentoModel>()
                 .ForMember(dest => dest.CodigoProcesso, m => m.Ignore())
                 .ForMember(dest => dest.DataInclusao, m => m.MapFrom(src => src.DataDocumento))

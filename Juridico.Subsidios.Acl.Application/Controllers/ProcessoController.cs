@@ -17,18 +17,6 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
             this.subsidiosHandler = subsidiosHandler;
         }
 
-        [HttpPost]
-        [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(string))]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [SwaggerResponse(StatusCodes.Status500InternalServerError, Type = typeof(string))]
-        [SwaggerOperation(Summary = "Cadastra um novo processo no sistema do fornecedor")]
-        public async Task<IActionResult> Post([FromBody] ProcessoModel processo)
-        {
-            //Chamar o handler
-
-            return Ok();
-        }
-
         [HttpGet]
         [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(ProcessoModel))]
         [SwaggerResponse(StatusCodes.Status400BadRequest, Type = typeof(string))]
@@ -39,6 +27,18 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
             var retornoProcesso = await subsidiosHandler.ObterProcesso(processo);
 
             return Ok(retornoProcesso);
+        }
+
+        [HttpPost]
+        [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(string))]
+        [SwaggerResponse(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [SwaggerResponse(StatusCodes.Status500InternalServerError, Type = typeof(string))]
+        [SwaggerOperation(Summary = "Cadastra um novo processo no sistema do fornecedor")]
+        public async Task<IActionResult> Post([FromBody] ProcessoModel processo)
+        {
+            //Chamar o handler
+
+            return Ok($"Processo {processo} cadastrado com sucesso.");
         }
 
         [HttpPatch]
@@ -52,7 +52,7 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
                 return BadRequest("Código do processo não pode ser nulo");
             //Chamar o handler
 
-            return Ok();
+            return Ok($"Processo {processo} atualizado com sucesso.");
         }
 
 

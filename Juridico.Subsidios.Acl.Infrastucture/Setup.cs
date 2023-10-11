@@ -1,6 +1,8 @@
 ﻿using Juridico.Subsidios.Acl.Domain.Handlers;
 using Juridico.Subsidios.Acl.Domain.Interfaces;
 using Juridico.Subsidios.Acl.Infrastucture.Gateways;
+using Juridico.Subsidios.Acl.Infrastucture.Handlers;
+using Juridico.Subsidios.Acl.Infrastucture.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -12,7 +14,12 @@ namespace Juridico.Subsidios.Acl.Infrastucture
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
             services.AddScoped<IFornecedorGateway, FornecedorGateway>();
+            
             services.AddScoped<IProcessoHandler, ProcessoHandler>();
+            services.AddScoped<ISubsidiosHandler, SubsidiosHandler>();
+            
+            services.AddSingleton<IConfigCatService, ConfigCatService>();
+            
             services.AddAutoMapper(GetCurrentAssemblies());
 
             return services;
