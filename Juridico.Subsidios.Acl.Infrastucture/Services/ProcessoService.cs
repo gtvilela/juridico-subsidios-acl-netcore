@@ -1,4 +1,4 @@
-﻿using Juridico.Subsidios.Acl.Domain.Interfaces;
+﻿using Juridico.Subsidios.Acl.Domain.Interfaces.Gateways;
 using Juridico.Subsidios.Acl.Domain.Mocks;
 using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 using Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor;

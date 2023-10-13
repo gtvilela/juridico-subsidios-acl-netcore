@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using Juridico.Subsidios.Acl.Domain.Interfaces;
 using Juridico.Subsidios.Acl.Domain.Mocks;
 using Juridico.Subsidios.Acl.Domain.Models.EnvioFornecedor;
 using Juridico.Subsidios.Acl.Domain.Models;
 using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 using Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor;
+using Juridico.Subsidios.Acl.Domain.Interfaces.Gateways;
 
 namespace Juridico.Subsidios.Acl.Infrastucture.Services
 {

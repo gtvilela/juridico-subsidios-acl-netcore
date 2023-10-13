@@ -1,4 +1,4 @@
-﻿using Juridico.Subsidios.Acl.Domain.Interfaces;
+﻿using Juridico.Subsidios.Acl.Domain.Interfaces.Services;
 
 namespace Juridico.Subsidios.Acl.Domain.Models.CheckModels
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Juridico.Subsidios.Acl.Domain.Interfaces
+namespace Juridico.Subsidios.Acl.Domain.Interfaces.Services
 {
     public interface IConfigCatService
     {

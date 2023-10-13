@@ -1,5 +1,5 @@
 ﻿using Juridico.Subsidios.Acl.Domain.Extensions;
-using Juridico.Subsidios.Acl.Domain.Interfaces;
+using Juridico.Subsidios.Acl.Domain.Interfaces.Services;
 using System.Text.Json;
 
 namespace Juridico.Subsidios.Acl.Domain.Models.CheckModels

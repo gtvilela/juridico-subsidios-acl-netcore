@@ -1,7 +1,7 @@
 ﻿using Flunt.Notifications;
 using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 
-namespace Juridico.Subsidios.Acl.Domain.Interfaces
+namespace Juridico.Subsidios.Acl.Domain.Interfaces.Gateways
 {
     public interface IFornecedorGateway
     {

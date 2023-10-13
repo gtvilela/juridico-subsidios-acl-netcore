@@ -1,5 +1,7 @@
 ﻿using Juridico.Subsidios.Acl.Domain.Handlers;
-using Juridico.Subsidios.Acl.Domain.Interfaces;
+using Juridico.Subsidios.Acl.Domain.Interfaces.Gateways;
+using Juridico.Subsidios.Acl.Domain.Interfaces.Handlers;
+using Juridico.Subsidios.Acl.Domain.Interfaces.Services;
 using Juridico.Subsidios.Acl.Infrastucture.Gateways;
 using Juridico.Subsidios.Acl.Infrastucture.Handlers;
 using Juridico.Subsidios.Acl.Infrastucture.Services;
@@ -22,6 +24,7 @@ namespace Juridico.Subsidios.Acl.Infrastucture
             services.AddScoped<IProcessoService, ProcessoService>();
             services.AddScoped<IDocumentoService, DocumentoService>();
             services.AddScoped<IInformacaoAdicionalService, InformacaoAdicionalService>();
+            services.AddScoped<IAndamentoService, AndamentoService>();
             
             services.AddAutoMapper(GetCurrentAssemblies());
 

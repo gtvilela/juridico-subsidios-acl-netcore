@@ -134,5 +134,12 @@
 																				<Status>OK</Status>
 																				<Informacao>12</Informacao>
 																			</Root>";
+        public const string XML_RETORNO_INCLUSAO_ANDAMENTO = @"<?xml version='1.0' encoding='UTF-8'?>
+																			<Root>
+																				<CodigoStatus>200</CodigoStatus>
+																				<Mensagem>Andamento importado com sucesso.</Mensagem>
+																				<Status>OK</Status>
+																				<Informacao>Processamento de Subsídios</Informacao>
+																			</Root>";
     }
 }

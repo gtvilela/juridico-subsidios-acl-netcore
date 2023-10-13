@@ -1,5 +1,5 @@
 ﻿using ConfigCat.Client;
-using Juridico.Subsidios.Acl.Domain.Interfaces;
+using Juridico.Subsidios.Acl.Domain.Interfaces.Services;
 using System.Text;
 using System.Text.Json;
 
