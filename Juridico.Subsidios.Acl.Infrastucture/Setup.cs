@@ -19,6 +19,9 @@ namespace Juridico.Subsidios.Acl.Infrastucture
             services.AddScoped<ISubsidiosHandler, SubsidiosHandler>();
             
             services.AddSingleton<IConfigCatService, ConfigCatService>();
+            services.AddScoped<IProcessoService, ProcessoService>();
+            services.AddScoped<IDocumentoService, DocumentoService>();
+            services.AddScoped<IInformacaoAdicionalService, InformacaoAdicionalService>();
             
             services.AddAutoMapper(GetCurrentAssemblies());
 

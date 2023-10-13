@@ -8,7 +8,7 @@ namespace Juridico.Subsidios.Acl.Domain.Mappings
     {
         public ProcessoMap()
         {
-            CreateMap<ProcessoFornecedorModel, ProcessoModel>()
+            CreateMap<ProcessoFornecedorRetornoModel, ProcessoModel>()
                 .ForMember(dest => dest.Codigo, m => m.Ignore())
                 .ForMember(dest => dest.NumeroProcesso, m => m.MapFrom(src => src.NumeroProcesso))
                 .ForMember(dest => dest.Vara, m => m.MapFrom(src => src.Vara))

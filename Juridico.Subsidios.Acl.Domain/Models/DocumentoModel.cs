@@ -14,6 +14,16 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         [SwaggerSchema(Description = "Nome do documento com extensão")]
         public string Nome { get; set; }
         /// <summary>
+        /// Código do tipo de documento no fornecedor
+        /// </summary>
+        [SwaggerSchema(Description = "Código do tipo de documento no fornecedor")]
+        public int CodigoTipoDocumento { get; set; }
+        /// <summary>
+        /// Nome do tipo do documento
+        /// </summary>
+        [SwaggerSchema(Description = "Nome do tipo de documento.")]
+        public string TipoDocumento { get; set; }
+        /// <summary>
         /// Código do processo que deve ser inserido o documento no fornecedor.
         /// Para inserir ou atualizar um processo, essa informação não é obrigatória.
         /// Mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.

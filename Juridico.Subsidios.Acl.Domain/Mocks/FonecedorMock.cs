@@ -21,7 +21,7 @@
 																	<Juros>10</Juros>
 																	<Vara>2ª Vara Civel</Vara>
 																</Root>";
-        public const string XML_RETORNO_CONSULTA_INFORMACAO_ADICIONAL = @"<?xml version='1.0' encoding='UTF-8'?>
+        public const string XML_RETORNO_CONSULTA_COM_INFORMACOES_ADICIONAIS = @"<?xml version='1.0' encoding='UTF-8'?>
 																			<Root>
 																				<CodigoProcesso>16099</CodigoProcesso>
 																				<InformacoesAdicionais>
@@ -55,13 +55,19 @@
 																					</Element>
 																				</InformacoesAdicionais>
 																			</Root>";
-        public const string XML_RETORNO_CONSULTA_DOCUMENTO = @"<?xml version='1.0' encoding='UTF-8'?>
+        public const string XML_RETORNO_CONSULTA_SEM_INFORMACOES_ADICIONAIS = @"<?xml version='1.0' encoding='UTF-8'?>
+																			<Root>
+																				<CodigoProcesso>16099</CodigoProcesso>
+																				<InformacoesAdicionais>
+																				</InformacoesAdicionais>
+																			</Root>";
+        public const string XML_RETORNO_CONSULTA_COM_DOCUMENTOS = @"<?xml version='1.0' encoding='UTF-8'?>
 																	<Root>
 																		<CodigoProcesso>16099</CodigoProcesso>
 																		<Documentos>
 																			<Element>
 																				<NumeroDocumento>0234</NumeroDocumento>
-																				<CodigoTipoDocumento>26</CodigoTipoDocumento>
+																				<CodigoTipoDocumento>1</CodigoTipoDocumento>
 																				<DescricaoTipoDocumento>Subsidios</DescricaoTipoDocumento>
 																				<Arquivo>JVBERi0xLjcNCiW1tbW1DQoxIDAgb2JqDQo8PC9UeXBlL0NRDM0M0FBQ0VDNjVDMTY5MjJEMjM+PDYyRTlDRDA1MzhFREQzNDNBQUNFQzY1QzE2OTIyRDIzPl0gL1ByZXYgMjg4MjQvWFJlZlN0bSAyODQ3Mz4+DQpzdGFydHhyZWYNCjMwMDQxDQolJUVPRg==</Arquivo>
 																				<DataDocumento>2023-06-22 19:26:55</DataDocumento>
@@ -71,7 +77,7 @@
 																			</Element>
 																			<Element>
 																				<NumeroDocumento>0839</NumeroDocumento>
-																				<CodigoTipoDocumento>26</CodigoTipoDocumento>
+																				<CodigoTipoDocumento>2</CodigoTipoDocumento>
 																				<DescricaoTipoDocumento>Subsidios</DescricaoTipoDocumento>
 																				<Arquivo>JVBERi0xLjcNCiW1tbW1DQoxIDAgb2JqDQo8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFIvTGFuZyhwdCkgL1N0cnVjdFRyZWVSb290IDE=</Arquivo>
 																				<DataDocumento>2023-06-22 19:26:55</DataDocumento>
@@ -81,7 +87,7 @@
 																			</Element>
 																			<Element>
 																				<NumeroDocumento>1684</NumeroDocumento>
-																				<CodigoTipoDocumento>26</CodigoTipoDocumento>
+																				<CodigoTipoDocumento>3</CodigoTipoDocumento>
 																				<DescricaoTipoDocumento>Subsidios</DescricaoTipoDocumento>
 																				<Arquivo>JVBERi0xLjcNCixMzA1MkREMTA0RDlFQzAwNUZFN0RBNjE2QjM+XSAvUHJldiAyODUzOS9YUmVmU3RtIDI4MTgyPj4NCnN0YXJ0eHJlZg0KMjk4MzYNCiUlRU9G</Arquivo>
 																				<DataDocumento>2023-06-22 19:26:55</DataDocumento>
@@ -91,7 +97,7 @@
 																			</Element>
 																			<Element>
 																				<NumeroDocumento>5430</NumeroDocumento>
-																				<CodigoTipoDocumento>26</CodigoTipoDocumento>
+																				<CodigoTipoDocumento>4</CodigoTipoDocumento>
 																				<DescricaoTipoDocumento>Subsidios</DescricaoTipoDocumento>
 																				<Arquivo>JVBERi0xLjcNCiWNURBNTY5OUU0NkVBRUYyPl0gL1ByZXYgMzAxNzQvWFJlZlN0bSAyOTgyMj4+DQpzdGFydHhyZWYNCjMxMzkxDQolJUVPRg==</Arquivo>
 																				<DataDocumento>2023-06-22 19:26:55</DataDocumento>
@@ -100,24 +106,33 @@
 																				<Usuario>123456</Usuario>
 																			</Element>
 																		</Documentos>
-																	</Root>";	
+																	</Root>";
+        public const string XML_RETORNO_CONSULTA_SEM_DOCUMENTOS = @"<?xml version='1.0' encoding='UTF-8'?>
+																	<Root>
+																		<CodigoProcesso>16099</CodigoProcesso>
+																		<Documentos>
+																		</Documentos>
+																	</Root>";
         public const string XML_RETORNO_INCLUSAO_PROCESSO = @"<?xml version='1.0' encoding='UTF-8'?>
-																<root>
-																	<codigoStatus>200</codigoStatus>
-																	<mensagem>Processo 16099 importado com sucesso</mensagem>
-																	<status>OK</status>
-																</root>";
+																<Root>
+																	<CodigoStatus>200</CodigoStatus>
+																	<Mensagem>Processo importado com sucesso.</Mensagem>
+																	<Status>OK</Status>
+																    <Informacao>16099</Informacao>
+																</Root>";
         public const string XML_RETORNO_INCLUSAO_DOCUMENTO = @"<?xml version='1.0' encoding='UTF-8'?>
-																<root>
-																	<codigoStatus>200</codigoStatus>
-																	<mensagem>Documento CNH importado com sucesso no processo 16099</mensagem>
-																	<status>OK</status>
-																</root>";
+																<Root>
+																	<CodigoStatus>200</CodigoStatus>
+																	<Mensagem>Documento importado com sucesso.</Mensagem>
+																	<Status>OK</Status>
+																	<Informacao>52</Informacao>
+																</Root>";
         public const string XML_RETORNO_INCLUSAO_INFORMACAO_ADICIONAL = @"<?xml version='1.0' encoding='UTF-8'?>
-																			<root>
-																				<codigoStatus>200</codigoStatus>
-																				<mensagem>Informação adicional  RI02A18 importada com sucessono processo 16099</mensagem>
-																				<status>OK</status>
-																			</root>";
+																			<Root>
+																				<CodigoStatus>200</CodigoStatus>
+																				<Mensagem>Informação adicional importada com sucesso.</Mensagem>
+																				<Status>OK</Status>
+																				<Informacao>12</Informacao>
+																			</Root>";
     }
 }

@@ -1,22 +1,21 @@
-﻿namespace Juridico.Subsidios.Acl.Domain.Models
+﻿using Juridico.Subsidios.Acl.Domain.Models.CheckModels;
+
+namespace Juridico.Subsidios.Acl.Domain.Models
 {
     public class SubsidioRetornoModel
     {
         public string Contrato { get; set; }
         public string Placa { get; set; }
-        public List<string> DocumentosMateriaLegal { get; set; }
-        public ProcessoModel ProcessoFornecedor { get; set; }
+        public SubsidiosCheckModel SubsidiosCheckModel { get; set; }
 
 
         public SubsidioRetornoModel(string contrato, 
                                     string placa, 
-                                    List<string> documentosMateriaLegal, 
-                                    ProcessoModel processoFornecedor)
+                                    SubsidiosCheckModel subsidiosCheck)
         {
             Contrato = contrato;
             Placa = placa;
-            DocumentosMateriaLegal = documentosMateriaLegal;
-            ProcessoFornecedor = processoFornecedor;
+            SubsidiosCheckModel= subsidiosCheck;
         }
 
         public SubsidioRetornoModel()

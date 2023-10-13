@@ -24,7 +24,7 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
         [SwaggerOperation(Summary = "Obtém as informações do processo referente.")]
         public async Task<IActionResult> Get(string processo)
         {
-            var retornoProcesso = await subsidiosHandler.ObterProcesso(processo);
+            var retornoProcesso = await subsidiosHandler.ProcessarSubsidios(processo);
 
             return Ok(retornoProcesso);
         }

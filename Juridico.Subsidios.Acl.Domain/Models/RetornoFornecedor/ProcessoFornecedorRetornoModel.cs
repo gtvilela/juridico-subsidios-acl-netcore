@@ -1,12 +1,11 @@
 ﻿using Flunt.Notifications;
-using Juridico.Subsidios.Acl.Domain.Models.Filtros;
 using System.Xml.Serialization;
 
 namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
     [Serializable]
     [XmlRoot(ElementName = "Root")]
-    public class ProcessoFornecedorModel : Notifiable<Notification>
+    public class ProcessoFornecedorRetornoModel : Notifiable<Notification>
     {
         /// <summary>
         /// Código do processo

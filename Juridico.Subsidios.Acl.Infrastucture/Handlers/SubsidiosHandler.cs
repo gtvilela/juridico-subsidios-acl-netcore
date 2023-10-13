@@ -1,15 +1,11 @@
 ﻿using Juridico.Subsidios.Acl.Domain.Interfaces;
 using Juridico.Subsidios.Acl.Domain.Models;
-using Newtonsoft.Json;
+using Juridico.Subsidios.Acl.Domain.Models.CheckModels;
 
 namespace Juridico.Subsidios.Acl.Domain.Handlers
 {
     public class SubsidiosHandler : ISubsidiosHandler
     {
-
-        /// <summary>
-        /// Processo Handler
-        /// </summary>
         private readonly IProcessoHandler processoHandler;
         private readonly IConfigCatService configCatService;
 
@@ -21,18 +17,9 @@ namespace Juridico.Subsidios.Acl.Domain.Handlers
 
         public async Task<SubsidioRetornoModel> ProcessarSubsidios(SubsidioModel subsidio)
         {
-            var processo = await processoHandler.ObterProcesso(subsidio.CodigoProcesso);
-
-            var documentosPorMateriaLegal = configCatService.BuscarSiglasDocumento(subsidio.MateriaLegal);
-            
-            var documentosTratados = JsonConvert.DeserializeObject<List<string>>(documentosPorMateriaLegal);
-
-            var retornoSubsidios = new SubsidioRetornoModel(subsidio.Contrato,
-                                                            subsidio.Placa,
-                                                            documentosTratados,
-                                                            processo);
-
-            return retornoSubsidios;
+            var processoCompleto = await processoHandler.ProcessarSubsidios(subsidio.CodigoProcesso);
+            var subsidiosCheck = new SubsidiosCheckModel(configCatService, processoCompleto);
+            return new SubsidioRetornoModel(subsidio.Contrato, subsidio.Placa, subsidiosCheck);
         }
     }
 }

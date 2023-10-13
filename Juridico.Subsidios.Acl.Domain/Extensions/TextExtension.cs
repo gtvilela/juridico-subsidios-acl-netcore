@@ -12,5 +12,10 @@ namespace Juridico.Subsidios.Acl.Domain.Extensions
             var materiaLegalCorrigida = Encoding.ASCII.GetString(bytes).ToLower();
             return materiaLegalCorrigida;
         }
+
+        public static string ToCamelCase(this string str)
+        {
+            return char.ToLower(str[0]) + str.Substring(1);
+        }
     }
 }

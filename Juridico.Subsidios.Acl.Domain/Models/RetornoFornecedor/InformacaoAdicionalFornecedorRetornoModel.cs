@@ -5,7 +5,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models.RetornoFornecedor
 {
     [Serializable]
     [XmlRoot(ElementName = "Root")]
-    public class InformacaoAdicionalFornecedorModel : Notifiable<Notification>
+    public class InformacaoAdicionalFornecedorRetornoModel : Notifiable<Notification>
     {
         public string CodigoProcesso { get; set; }
 

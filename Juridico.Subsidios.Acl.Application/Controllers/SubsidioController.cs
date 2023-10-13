@@ -1,6 +1,7 @@
 using Juridico.Subsidios.Acl.Domain.Extensions;
 using Juridico.Subsidios.Acl.Domain.Interfaces;
 using Juridico.Subsidios.Acl.Domain.Models;
+using Juridico.Subsidios.Acl.Infrastucture.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -13,13 +14,13 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
     public class SubsidioController : ApiBaseController<SubsidioController>
     {
         private readonly ISubsidiosHandler subsidiosHandler;
-        private readonly IConfigCatService configCatService;
+        private readonly IProcessoHandler processoHandler;
         public SubsidioController(ILogger<SubsidioController> logger, 
                                   ISubsidiosHandler subsidiosHandler,
-                                  IConfigCatService configCatService) : base(logger)
+                                  IProcessoHandler processoHandler) : base(logger)
         {
             this.subsidiosHandler = subsidiosHandler;
-            this.configCatService = configCatService;
+            this.processoHandler = processoHandler;
         }
 
         [HttpPost]
@@ -36,25 +37,6 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
             var subsidios = subsidiosHandler.ProcessarSubsidios(subsidio);
             Console.WriteLine($"Informações enviadas com sucesso. Subsídios do processo {subsidio.CodigoProcesso} serão enviados à plataforma do fornecedor.");
             return Ok(subsidios);
-        }
-
-        [HttpPost("{informacaoAdicional}")]
-        [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(string))]
-        [SwaggerResponse(StatusCodes.Status400BadRequest, Type = typeof(string))]
-        [SwaggerResponse(StatusCodes.Status500InternalServerError, Type = typeof(string))]
-        [SwaggerOperation(Summary = "Busca o código das informações adicionais do fornecedor.")]
-        public async Task<IActionResult> BuscarCodigoInformacaoAdicional(string informacaoAdicional)
-        {
-            if (string.IsNullOrEmpty(informacaoAdicional))
-                return BadRequest("Informação adicional não pode ser nulo");
-
-            var retorno = configCatService.BuscarCodigoInformacaoAdicional(informacaoAdicional);
-            
-            if(retorno is null)
-            {
-                return BadRequest($"A informação adicional {informacaoAdicional} não foi encontrada");
-            }
-            return Ok(retorno);
         }
     }
 }
