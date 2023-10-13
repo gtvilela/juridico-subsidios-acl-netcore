@@ -12,28 +12,32 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         /// Nome do documento com extensão
         /// </summary>
         [SwaggerSchema(Description = "Nome do documento com extensão")]
+        [Required(ErrorMessage = "Nome do documento é obrigatório.")]
         public string Nome { get; set; }
         /// <summary>
         /// Código do tipo de documento no fornecedor
         /// </summary>
-        [SwaggerSchema(Description = "Código do tipo de documento no fornecedor")]
-        public int CodigoTipoDocumento { get; set; }
+        [SwaggerSchema(Description = "Código do tipo de documento no fornecedor. Em caso de dúvidas, verificar o código correto para o tipo de documento na feature flag configurada no ConfigCat.")]
+        [Required(ErrorMessage = "Código do tipo do documento é obrigatório.")]
+        public int CodigoTipo { get; set; }
         /// <summary>
         /// Nome do tipo do documento
         /// </summary>
         [SwaggerSchema(Description = "Nome do tipo de documento.")]
-        public string TipoDocumento { get; set; }
+        public string Tipo { get; set; }
         /// <summary>
         /// Código do processo que deve ser inserido o documento no fornecedor.
         /// Para inserir ou atualizar um processo, essa informação não é obrigatória.
         /// Mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.
         /// </summary>
         [SwaggerSchema(Description = "Código do processo que deve ser inserido o documento no fornecedor. Para inserir ou atualizar um processo, essa informação não é obrigatória, mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.")]
-        public string CodigoProcesso { get; set; }
+        [Required(ErrorMessage = "Código do processo é obrigatório.")]
+        public int CodigoProcesso { get; set; }
         /// <summary>
         /// Base64 referente ao documento
         /// </summary>
         [SwaggerSchema(Description = "Base64 referente ao documento")]
+        [Required(ErrorMessage = "Arquivo no formato base64 é obrigatório.")]
         public string Base64 { get; set; }
         /// <summary>
         /// Descrição do documento

@@ -14,12 +14,12 @@ namespace Juridico.Subsidios.Acl.Domain.Mappings
 
             CreateMap<DocumentoProcessoIntegracao, DocumentoModel>()
                 .ForMember(dest => dest.CodigoProcesso, m => m.Ignore())
-                .ForMember(dest => dest.CodigoTipoDocumento, m => m.MapFrom(src => Convert.ToInt32(src.CodigoTipoDocumento)))
+                .ForMember(dest => dest.CodigoTipo, m => m.MapFrom(src => Convert.ToInt32(src.CodigoTipoDocumento)))
                 .ForMember(dest => dest.DataInclusao, m => m.MapFrom(src => src.DataDocumento))
                 .ForMember(dest => dest.Base64, m => m.MapFrom(src => src.Arquivo));
 
             CreateMap<DocumentoModel, DocumentoFornecedorEnvioModel>()
-                .ForMember(dest => dest.CodigoTipoDocumento, m => m.MapFrom(src => src.CodigoTipoDocumento));
+                .ForMember(dest => dest.CodigoTipoDocumento, m => m.MapFrom(src => src.CodigoTipo));
         }
     }
 }

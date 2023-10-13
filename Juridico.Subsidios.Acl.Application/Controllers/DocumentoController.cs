@@ -16,7 +16,7 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
                                   IDocumentoService documentoService) : base(logger)
         {
             this.documentoService = documentoService;
-        }
+        } 
 
         [HttpPost]
         [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(string))]
@@ -25,11 +25,6 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
         [SwaggerOperation(Summary = "Inserir documento do processo no sistema do fornecedor.")]
         public async Task<IActionResult> InserirDocumento([FromBody] DocumentoModel documento)
         {
-            if (string.IsNullOrEmpty(documento.CodigoProcesso) && 
-                string.IsNullOrEmpty(documento.Nome) &&
-                string.IsNullOrEmpty(documento.Base64))
-                return BadRequest("Código do processo, nome do arquivo e o arquivo no formato base64 são obrigatórios.");
-
             var retorno = await documentoService.InserirDocumento(documento);
             
             return Ok($"{retorno.Mensagem} | {retorno.Informacao}");

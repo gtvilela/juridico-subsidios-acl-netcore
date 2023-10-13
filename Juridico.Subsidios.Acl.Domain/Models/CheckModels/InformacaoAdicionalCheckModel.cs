@@ -63,7 +63,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models.CheckModels
                                                             List<InformacaoAdicionalModel> informacoesAdicionais)
         {
             var codigoInformacaoAdicional = jsonInfoAdds.RootElement.GetProperty(infoAdd.ToCamelCase()).ToString();
-            return informacoesAdicionais.Any(x => x.Codigo == Convert.ToInt32(codigoInformacaoAdicional));
+            return informacoesAdicionais.Any(x => x.CodigoTipo == Convert.ToInt32(codigoInformacaoAdicional));
         }
     }
 }

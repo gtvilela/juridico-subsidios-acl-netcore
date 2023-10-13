@@ -11,14 +11,16 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         /// <summary>
         /// Código da informação adicional cadastrada no fornecedor
         /// </summary>
-        [SwaggerSchema(Description = "Código da informação adicional cadastrada no fornecedor.")]
-        public int Codigo { get; set; }
+        [SwaggerSchema(Description = "Código da informação adicional cadastrada no fornecedor. Em caso de dúvidas, verificar o código correto para a informação adicional na feature flag configurada no ConfigCat.")]
+        [Required(ErrorMessage = "Código do tipo da informação adicional é obrigatório.")]
+        public int CodigoTipo { get; set; }
         /// <summary>
         /// Código do processo que deve ser inserida a informação adicional no fornecedor.
         /// Para inserir ou atualizar um processo, essa informação não é obrigatória.
         /// Mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.
         /// </summary>
         [SwaggerSchema(Description = "Código do processo que deve ser inserida a informação adicional no fornecedor. Para inserir ou atualizar um processo, essa informação não é obrigatória, mas caso sejam utilizas as rotas de inclusão e atualização, essa informação é necessária.")]
+        [Required(ErrorMessage = "Código do processo é obrigatório.")]
         public int CodigoProcesso { get; set; }
         /// <summary>
         /// Nome da informação adicional cadastrada no fornecedor
@@ -29,6 +31,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models
         /// Valor da informação adicional
         /// </summary>
         [SwaggerSchema(Description = "Valor da informação adicional.")]
+        [Required(ErrorMessage = "Valor da informação adicional é obrigatório.")]
         public string Valor { get; set; }
         /// <summary>
         /// Identificação do veículo

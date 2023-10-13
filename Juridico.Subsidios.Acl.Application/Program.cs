@@ -18,6 +18,7 @@ builder.Services.AddSwaggerGen(opt =>
         new OpenApiInfo
         {
             Title = "Juridico Subsídios ACL API",
+            Description = "ACL responsável para fazer a comunicação com qualquer fornecedor que forneça o sistema de gestão de processos judiciais. Além de receber as informações necessárias para a busca dos subsídios, essa aplicação tem a responsabilidade de receber os subsídios retornados e criar a camada de comunicação com o fornecedor para que sejam cadastrados no processo, no sistema terceiro.",
             Version = "v1",
             Contact = new OpenApiContact()
             {
@@ -33,8 +34,6 @@ builder.Services.AddSwaggerGen(opt =>
 
 
 var app = builder.Build();
-var client = ConfigCatClient.Get(Environment.GetEnvironmentVariable("CHAVE_CONFIGCAT")); // <-- This is the actual SDK Key for your 'Test Environment' environment
-client.LogLevel = ConfigCat.Client.LogLevel.Info;
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

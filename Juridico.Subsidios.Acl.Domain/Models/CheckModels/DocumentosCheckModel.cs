@@ -46,7 +46,7 @@ namespace Juridico.Subsidios.Acl.Domain.Models.CheckModels
                                                             List<DocumentoModel> documentos)
         {
             var codigoDocumento = jsonDocumentos.RootElement.GetProperty(documento.ToCamelCase()).ToString();
-            return documentos.Any(x => x.CodigoTipoDocumento == Convert.ToInt32(codigoDocumento));
+            return documentos.Any(x => x.CodigoTipo == Convert.ToInt32(codigoDocumento));
         }
     }
 }
