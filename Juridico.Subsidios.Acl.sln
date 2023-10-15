@@ -5,11 +5,11 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juridico.Subsidios.Acl.Application", "Juridico.Subsidios.Acl.Application\Juridico.Subsidios.Acl.Application.csproj", "{A69EAC1A-A7BF-47F3-9847-7673FC3534CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juridico.Subsidios.Acl.Domain", "Juridico.Subsidios.Acl.Domain\Juridico.Subsidios.Acl.Domain.csproj", "{D02CC5E0-D9DD-47C6-AC94-78DE6BAAB998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juridico.Subsidios.Acl.Domain", "Juridico.Subsidios.Acl.Domain\Juridico.Subsidios.Acl.Domain.csproj", "{D02CC5E0-D9DD-47C6-AC94-78DE6BAAB998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juridico.Subsidios.Acl.Infrastucture", "Juridico.Subsidios.Acl.Infrastucture\Juridico.Subsidios.Acl.Infrastucture.csproj", "{1AAD24CA-9EBC-454B-98CF-80616B13CADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juridico.Subsidios.Acl.Infrastucture", "Juridico.Subsidios.Acl.Infrastucture\Juridico.Subsidios.Acl.Infrastucture.csproj", "{1AAD24CA-9EBC-454B-98CF-80616B13CADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juridico.Subsidios.Acl.Tests", "Juridico.Subsidios.Acl.Tests\Juridico.Subsidios.Acl.Tests.csproj", "{00139ECF-413D-49C9-A3D5-BBEBAE604624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Juridico.Subsidios.Acl.Tests", "Juridico.Subsidios.Acl.Tests\Juridico.Subsidios.Acl.Tests.csproj", "{00139ECF-413D-49C9-A3D5-BBEBAE604624}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

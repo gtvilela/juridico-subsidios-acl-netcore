@@ -8,25 +8,20 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Services
 {
     public class RabbitMqService : IRabbitMqService
     {
-        private static IConnection GetConnection()
+
+        public void Publish(SubsidioRetornoModel subsidio, string fila)
         {
             var factory = new ConnectionFactory()
             {
                 HostName = "localhost", // Endereço do servidor RabbitMQ
                 Port = 5672,            // Porta padrão
-                UserName = "guest",     // Nome de usuário
-                Password = "guest"      // Senha
+                UserName = "admin",     // Nome de usuário
+                Password = "pwd123"      // Senha
             };
 
             using var connection = factory.CreateConnection();
 
-            return connection;
-        }
-
-        public void Publish(SubsidioRetornoModel subsidio, string fila)
-        {
-            var channel = GetConnection().CreateModel();
-
+            using var channel = connection.CreateModel();
             // Declare uma fila
             channel.QueueDeclare(fila, false, false, false, null);
             var msg = JsonSerializer.Serialize(subsidio);
