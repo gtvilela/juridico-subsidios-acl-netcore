@@ -3,7 +3,7 @@ using Juridico.Subsidios.Acl.Domain.Interfaces.Handlers;
 using Juridico.Subsidios.Acl.Domain.Models;
 using Juridico.Subsidios.Acl.Infrastucture.Services;
 
-namespace Juridico.Subsidios.Acl.Infrastucture.Handlers
+namespace Juridico.Subsidios.Acl.Application.Handlers
 {
     public class ProcessoHandler : IProcessoHandler
     {
@@ -34,13 +34,13 @@ namespace Juridico.Subsidios.Acl.Infrastucture.Handlers
             #endregion
 
             #region Buscar informações adicionais
-            var informacoesAdicionaisFornecedor = await informacaoAdicionalService.ObterInformacoesAdicionais(processo);
+            var informacoesAdicionaisFornecedor = await informacaoAdicionalService.ObterRetornoComInformacoesAdicionais(processo);
             var retornoInformacoesAdicionais = mapper.Map<ProcessoModel>(informacoesAdicionaisFornecedor);
             retornoProcesso.InformacoesAdicionais = retornoInformacoesAdicionais.InformacoesAdicionais;
             #endregion
 
             #region Buscar documentos
-            var documentosFornecedor = await documentoService.ObterDocumentos(processo);
+            var documentosFornecedor = await documentoService.ObterRetornoComDocumentos(processo);
             var retornoDocumentos = mapper.Map<ProcessoModel>(documentosFornecedor);
             retornoProcesso.Documentos = retornoDocumentos.Documentos;
             #endregion

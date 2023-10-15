@@ -1,7 +1,6 @@
 using Juridico.Subsidios.Acl.Domain.Extensions;
 using Juridico.Subsidios.Acl.Domain.Interfaces.Handlers;
 using Juridico.Subsidios.Acl.Domain.Models;
-using Juridico.Subsidios.Acl.Infrastucture.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -14,13 +13,10 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
     public class SubsidioController : ApiBaseController<SubsidioController>
     {
         private readonly ISubsidiosHandler subsidiosHandler;
-        private readonly IProcessoHandler processoHandler;
         public SubsidioController(ILogger<SubsidioController> logger, 
-                                  ISubsidiosHandler subsidiosHandler,
-                                  IProcessoHandler processoHandler) : base(logger)
+                                  ISubsidiosHandler subsidiosHandler) : base(logger)
         {
             this.subsidiosHandler = subsidiosHandler;
-            this.processoHandler = processoHandler;
         }
 
         [HttpPost]
@@ -34,9 +30,9 @@ namespace Juridico.Nucleo.Subsidios.Application.Controllers
                 return BadRequest("Ao menos uma das informações (Placa ou Contrato) deve ser informada.");
 
             subsidio.MateriaLegal = subsidio.MateriaLegal.RetirarAcentuacaoMateriaLegal();
-            var subsidios = subsidiosHandler.ProcessarSubsidios(subsidio);
+            _ = subsidiosHandler.ProcessarSubsidios(subsidio);
             Console.WriteLine($"Informações enviadas com sucesso. Subsídios do processo {subsidio.CodigoProcesso} serão enviados à plataforma do fornecedor.");
-            return Ok(subsidios);
+            return Ok($"Informações enviadas com sucesso. Subsídios do processo {subsidio.CodigoProcesso} serão enviados à plataforma do fornecedor.");
         }
     }
 }

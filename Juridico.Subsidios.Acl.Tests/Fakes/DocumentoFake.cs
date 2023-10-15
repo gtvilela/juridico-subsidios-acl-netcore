@@ -13,7 +13,7 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 Descricao = "CRLV",
                 Nome = "CRLV.pdf",
                 Usuario = "123456",
-                CodigoProcesso = "16099"
+                CodigoProcesso = 16099
             };
         }
         public static DocumentoModel ObterDocumentoBoDefault()
@@ -25,7 +25,7 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 Descricao = "BO",
                 Nome = "BO.pdf",
                 Usuario = "123456",
-                CodigoProcesso = "16099"
+                CodigoProcesso = 16099
             };
         }
 
@@ -38,7 +38,7 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 Descricao = "CNH",
                 Nome = "CNH.pdf",
                 Usuario = "123456",
-                CodigoProcesso = "16099"
+                CodigoProcesso = 16099
             };
         }
 
@@ -51,7 +51,7 @@ namespace Juridico.Subsidios.Acl.Tests.Fakes
                 Descricao = "CONTRATO",
                 Nome = "CONTRATO.pdf",
                 Usuario = "123456",
-                CodigoProcesso = "16099"
+                CodigoProcesso = 16099
             };
         }
     }

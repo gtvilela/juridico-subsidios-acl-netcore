@@ -1,9 +1,6 @@
-﻿using Juridico.Subsidios.Acl.Domain.Handlers;
-using Juridico.Subsidios.Acl.Domain.Interfaces.Gateways;
-using Juridico.Subsidios.Acl.Domain.Interfaces.Handlers;
+﻿using Juridico.Subsidios.Acl.Domain.Interfaces.Gateways;
 using Juridico.Subsidios.Acl.Domain.Interfaces.Services;
 using Juridico.Subsidios.Acl.Infrastucture.Gateways;
-using Juridico.Subsidios.Acl.Infrastucture.Handlers;
 using Juridico.Subsidios.Acl.Infrastucture.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -17,10 +14,9 @@ namespace Juridico.Subsidios.Acl.Infrastucture
         {
             services.AddScoped<IFornecedorGateway, FornecedorGateway>();
             
-            services.AddScoped<IProcessoHandler, ProcessoHandler>();
-            services.AddScoped<ISubsidiosHandler, SubsidiosHandler>();
-            
             services.AddSingleton<IConfigCatService, ConfigCatService>();
+            services.AddSingleton<IRabbitMqService, RabbitMqService>();
+
             services.AddScoped<IProcessoService, ProcessoService>();
             services.AddScoped<IDocumentoService, DocumentoService>();
             services.AddScoped<IInformacaoAdicionalService, InformacaoAdicionalService>();
@@ -36,7 +32,8 @@ namespace Juridico.Subsidios.Acl.Infrastucture
             return new Assembly[]
             {
                 Assembly.Load("Juridico.Subsidios.Acl.Application"),
-                Assembly.Load("Juridico.Subsidios.Acl.Domain")
+                Assembly.Load("Juridico.Subsidios.Acl.Domain"),
+                Assembly.Load("Juridico.Subsidios.Acl.Infrastucture")
             };
         }
     }

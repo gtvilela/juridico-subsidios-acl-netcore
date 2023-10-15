@@ -1,4 +1,4 @@
-using ConfigCat.Client;
+using Juridico.Subsidios.Acl.Application;
 using Juridico.Subsidios.Acl.Infrastucture;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddInfrastructure();
+builder.Services.AddApplication();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
